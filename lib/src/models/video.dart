@@ -51,21 +51,21 @@ class Snippet {
     this.publishedAt,
     this.channelId,
     this.title,
-    this.description,
+    required this.description,
     this.thumbnails,
     this.channelTitle,
     this.liveBroadcastContent,
-    this.publishTime,
+    required this.publishTime,
   });
 
   DateTime? publishedAt;
   String? channelId;
   String? title;
-  String? description;
+  String description;
   Thumbnails? thumbnails;
   String? channelTitle;
   String? liveBroadcastContent;
-  DateTime? publishTime;
+  DateTime publishTime;
 
   factory Snippet.fromJson(Map<String, dynamic> json) => Snippet(
         publishedAt: DateTime.parse(json["publishedAt"]),
@@ -88,7 +88,7 @@ class Snippet {
         "thumbnails": thumbnails!.toJson(),
         "channelTitle": channelTitle,
         "liveBroadcastContent": liveBroadcastContent,
-        "publishTime": publishTime!.toIso8601String(),
+        "publishTime": publishTime.toIso8601String(),
       };
 }
 

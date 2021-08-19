@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                 (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Get.toNamed('/detail/239587');
+                      Get.toNamed('/detail/${controller.youtubeResult.value.items![index].id.videoId}');
                     },
                     child: VideoWidget(
                       video: controller.youtubeResult.value.items![index],
